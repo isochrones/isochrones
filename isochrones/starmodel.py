@@ -221,10 +221,10 @@ class StarModel(object):
         """
         m = re.search(r"[a-zA-Z0-9_]+", kw)
         if m:
-            if m.group(1) in cls._not_a_band:
+            if m.group() in cls._not_a_band:
                 return None
             else:
-                return m.group(1)
+                return m.group()
 
     @classmethod
     def get_bands(cls, inifile):
