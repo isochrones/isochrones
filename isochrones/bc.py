@@ -80,7 +80,7 @@ class BolometricCorrectionGrid(Grid):
                     names = line[1:].split()
                     break
         return pd.read_csv(
-            filename, names=names, delim_whitespace=True, comment="#", index_col=self.index_cols
+            filename, names=names, sep=r"\s+", comment="#", index_col=self.index_cols
         )
 
     def get_table(self, phot, feh):

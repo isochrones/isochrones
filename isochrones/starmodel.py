@@ -1653,7 +1653,7 @@ class BasicStarModel(StarModel):
     def _make_samples(self):
         filename = "{}post_equal_weights.dat".format(self.mnest_basename)
         try:
-            df = pd.read_csv(filename, names=self.param_names + ("lnprob",), delim_whitespace=True)
+            df = pd.read_csv(filename, names=self.param_names + ("lnprob",), sep=r"\s+")
         except OSError:
             logger.error("Error loading chains from {}".format(filename))
             raise

@@ -142,7 +142,7 @@ class MISTIsochroneGrid(MISTModelGrid):
                     break
         feh = cls.get_feh(filename)
         df = pd.read_csv(
-            filename, comment="#", delim_whitespace=True, skip_blank_lines=True, names=column_names
+            filename, comment="#", sep=r"\s+", skip_blank_lines=True, names=column_names
         )
         df["feh"] = feh
         return df
@@ -275,7 +275,7 @@ class MISTEvolutionTrackGrid(MISTModelGrid):
                     break
         initial_mass = cls.get_mass(filename)
         df = pd.read_csv(
-            filename, comment="#", delim_whitespace=True, skip_blank_lines=True, names=column_names
+            filename, comment="#", sep=r"\s+", skip_blank_lines=True, names=column_names
         )
         df["initial_mass"] = initial_mass
         try:
