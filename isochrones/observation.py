@@ -1257,7 +1257,7 @@ class ObservationTree(Node):
             except AttributeError:
                 pass
 
-        inds = np.argsort(ds)
+        inds = np.argsort(ds, kind='stable')
         ds = [ds[i] for i in inds]
         nodes = [nodes[i] for i in inds]
 
