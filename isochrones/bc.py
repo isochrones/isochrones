@@ -90,7 +90,7 @@ class BolometricCorrectionGrid(Grid):
         return os.path.join(self.datadir, "{}.h5".format(phot))
 
     def get_tarball_url(self, phot):
-        url = "http://waps.cfa.harvard.edu/MIST/BC_tables/{}.txz".format(phot)
+        url = "https://mist.science/BC_tables/v1/{}.txz".format(phot)
         return url
 
     def get_tarball_file(self, phot):
