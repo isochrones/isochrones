@@ -116,10 +116,10 @@ class MISTIsochroneGrid(MISTModelGrid):
     def get_tarball_url(self, **kwargs):
         """
         e.g.
-        http://waps.cfa.harvard.edu/MIST/data/tarballs_v1.2/MIST_v1.2_vvcrit0.4_full_isos.txz
+        https://mist.science/data/tarballs_v1.2/MIST_v1.2_vvcrit0.4_full_isos.txz
         """
         return (
-            "http://waps.cfa.harvard.edu/MIST/data/tarballs"
+            "https://mist.science/data/tarballs"
             + "_v{version}/MIST_v{version}_vvcrit{vvcrit}_{kind}.txz".format(**self.kwargs)
         )
 
@@ -240,7 +240,7 @@ class MISTEvolutionTrackGrid(MISTModelGrid):
     def get_tarball_url(self, feh):
         basename = self.get_file_basename(feh)
         version = self.kwargs["version"]
-        return "http://waps.cfa.harvard.edu/MIST/data/tarballs_v{version}/{basename}.txz".format(
+        return "https://mist.science/data/tarballs_v{version}/{basename}.txz".format(
             version=version, basename=basename
         )
         return os.path.join(self.datadir, "{}.txz".format(basename))
